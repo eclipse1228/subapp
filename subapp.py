@@ -5,10 +5,15 @@ from pathlib import Path
 import matplotlib.patches as mpatches
 import matplotlib.pyplot as plt
 import matplotlib.font_manager as fm
+import streamlit as st
+
+
 
 def get_data(url):
     res = requests.get(url, headers=header)
     return pd.read_html(res.text, header=0, encoding='euc-kr')[0]
+
+st.multiselect(’choose a name’,[name])
 
 name = '휴켐스'
 url = get_url(name, df_code)  # url 가져오기
